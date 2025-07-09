@@ -84,3 +84,6 @@ def webhook_from_telegram():
     json_string = request.get_data().decode('utf-8')
     process_webhook(json_string)
     return "OK", 200
+
+if __name__ == "__main__":
+    app.run()
