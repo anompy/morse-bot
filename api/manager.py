@@ -1,13 +1,12 @@
 import os 
 import telebot
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 
 TOKEN = os.environ.get('TOKEN')
 bot = telebot.TeleBot(token=TOKEN)
 
 app = Flask(__name__)
-CORS(app)
+
 
 
 def morse_translator(input_string):
