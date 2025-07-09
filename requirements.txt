@@ -1,2 +1,3 @@
 Flask
 pyTelegramBotApi
+gunicorn==20.1.0
