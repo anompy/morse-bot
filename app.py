@@ -39,7 +39,7 @@ def morse_translator(input_string):
                     if char in REVERSE_MORSE_CODE_DICT:
                         decoded_word.append(REVERSE_MORSE_CODE_DICT[char])
                     else:
-                        return "Error: Kode Morse tidak dikenal ditemukan.", ""
+                        return "Error: Morse code not found.", ""
                 decoded_text.append("".join(decoded_word))
             return " ".join(decoded_text)
         except Exception as e:
@@ -55,16 +55,16 @@ def morse_translator(input_string):
                 elif char in MORSE_CODE_DICT:
                     morse_code.append(MORSE_CODE_DICT[char])
                 else:
-                    return f"Error: Karakter '{char}' tidak dapat diterjemahkan ke Morse.", ""
+                    return f"Error: Cannot translate character '{char}'", ""
             return " ".join(morse_code)
         except Exception as e:
-            return f"Error: {e}", ""
+            return "An unexpected error occurred", ""
 
 
 
 @bot.message_handler(commands=['start'])
 def start_message(M):
-    bot.send_message(M.chat.id, "Hai")
+    bot.send_message(M.chat.id, "Hello! I'm a Morse code translator!\n\nI can translate text to Morse code and vice versa.\n\nSo, feel free to type anything and I'll translate your text!👌")
 
 @bot.message_handler(func=lambda message: True)
 def echo_message(M):
